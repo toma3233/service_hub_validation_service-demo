@@ -5,7 +5,7 @@
 ### [Optional: If you ran the development pipeline] Download the dashboard file.
 - If you ran the "Service Resource And Code Development Pipeline", the pipeline publishes the dashboard file as an artifact.
 1. Navigate to "Related" section of pipeline summary, and select the published button.
-2. Download the dashboard file by selecting the artifact name mygreeterv3-dashboard.
+2. Download the dashboard file by selecting the artifact name mygreeterv4-dashboard.
 3. Follow the steps below to create and view the dashboard.
 
 ### Creating the Dashboard

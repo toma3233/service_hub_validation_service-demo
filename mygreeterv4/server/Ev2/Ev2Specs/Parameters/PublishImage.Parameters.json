@@ -28,16 +28,16 @@
           {
             "name": "TARBALL_IMAGE_FILE_SAS",
             "reference": {
-              "path": "Build\\mygreeterv3-image.tar"
+              "path": "Build\\mygreeterv4-image.tar"
             }
           },
           {
             "name": "DESTINATION_FILE_NAME",
-            "value": "mygreeterv3-image.tar"
+            "value": "mygreeterv4-image.tar"
           },
           {
             "name": "IMAGE_NAME",
-            "value": "mygreeterv3"
+            "value": "mygreeterv4"
           },
           {
             "name": "TAG_NAME",

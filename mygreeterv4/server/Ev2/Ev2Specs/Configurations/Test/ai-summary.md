@@ -6,5 +6,5 @@ This directory contains a JSON configuration file for the test environment of a 
 
 ## File Details
     
-### /mygreeterv3/server/Ev2/Ev2Specs/Configurations/Test/Configuration.json
+### /mygreeterv4/server/Ev2/Ev2Specs/Configurations/Test/Configuration.json
 This document is a JSON configuration file for the test environment of a server component. It includes settings such as a tenant ID, a placeholder subscription key, and specifies the environment as 'test'.

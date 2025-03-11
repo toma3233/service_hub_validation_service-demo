@@ -1,6 +1,6 @@
 # (Prerequisite) To deploy the shared resources needed, go to the directory of the shared resources and run the Makefile.
 CURRENT_DIR := $(shell pwd)
-IMAGE_NAME = mygreeterv3
+IMAGE_NAME = mygreeterv4
 
 #Kube config must exist within server directory to be accessible in docker container when running helm commands
 connect-cluster:
@@ -21,7 +21,7 @@ build-image:
 	fi; \
 	docker build --build-arg PAT=$(READPAT) \
 	-t $(IMAGE_NAME) -f ../Dockerfile ./../; \
-	docker save -o mygreeterv3-image.tar $(IMAGE_NAME); \
+	docker save -o mygreeterv4-image.tar $(IMAGE_NAME); \
 
 build-multiarch-image:
 	set -e; \
@@ -38,7 +38,7 @@ build-multiarch-image:
 	-t $(IMAGE_NAME) -f ../Dockerfile ./../ --load; \
 	docker buildx use --builder default; \
 	docker buildx rm --builder svchubbuilder; \
-	docker save -o mygreeterv3-image.tar $(IMAGE_NAME); \
+	docker save -o mygreeterv4-image.tar $(IMAGE_NAME); \
 
 build-workspace-image:
 	set -e; \
@@ -48,12 +48,12 @@ build-workspace-image:
 	fi; \
 	docker build --build-arg PAT=$(READPAT) \
 	-t $(IMAGE_NAME) -f ../Dockerfile_workspace ./../../; \
-	docker save -o mygreeterv3-image.tar $(IMAGE_NAME); \
+	docker save -o mygreeterv4-image.tar $(IMAGE_NAME); \
 
 push-image:
 	set -e; \
 	az acr login --name servicehubval{{.resourcesName}}{{.location}}acr.azurecr.io; \
-	docker load -i mygreeterv3-image.tar; \
-	docker tag $(IMAGE_NAME) servicehubval{{.resourcesName}}{{.location}}acr.azurecr.io/mygreeterv3:{{.serviceImageTag}}; \
-	docker push servicehubval{{.resourcesName}}{{.location}}acr.azurecr.io/mygreeterv3:{{.serviceImageTag}}; \
-	rm mygreeterv3-image.tar;
+	docker load -i mygreeterv4-image.tar; \
+	docker tag $(IMAGE_NAME) servicehubval{{.resourcesName}}{{.location}}acr.azurecr.io/mygreeterv4:{{.serviceImageTag}}; \
+	docker push servicehubval{{.resourcesName}}{{.location}}acr.azurecr.io/mygreeterv4:{{.serviceImageTag}}; \
+	rm mygreeterv4-image.tar;

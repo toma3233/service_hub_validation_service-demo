@@ -56,6 +56,7 @@ stages:
       - template: ../basicservice/deployServicePipeline.yaml
       - template: ../mygreeterv3/deployServicePipeline.yaml
       - template: ../mygreeterv3csharp/deployServicePipeline.yaml
+      - template: ../mygreeterv4/deployServicePipeline.yaml
       - template: ../operationcontainer/deployServicePipeline.yaml
   - stage: deletion_stage
     displayName: Delete all resources

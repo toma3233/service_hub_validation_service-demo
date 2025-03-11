@@ -39,17 +39,17 @@
       ]
     },
     {
-      "name": "HelmDeploy-mygreeterv3-client",
+      "name": "HelmDeploy-mygreeterv4-client",
       "targetType": "ApplicationDefinition",
       "applications": {
         "names": [
-          "mygreeterv3client"
+          "mygreeterv4client"
         ],
         "actions": [
           "AppDeploy"
         ],
         "applyAcrossServiceResources": {
-          "definitionName": "mygreeterv3client-SRDef"
+          "definitionName": "mygreeterv4client-SRDef"
         }
       },
       "dependsOn": [
@@ -58,17 +58,17 @@
       ]
     },
     {
-      "name": "HelmDeploy-mygreeterv3-server",
+      "name": "HelmDeploy-mygreeterv4-server",
       "targetType": "ApplicationDefinition",
       "applications": {
         "names": [
-          "mygreeterv3server"
+          "mygreeterv4server"
         ],
         "actions": [
           "AppDeploy"
         ],
         "applyAcrossServiceResources": {
-          "definitionName": "mygreeterv3server-SRDef"
+          "definitionName": "mygreeterv4server-SRDef"
         }
       },
       "dependsOn": [
@@ -77,17 +77,17 @@
       ]
     },
     {
-      "name": "HelmDeploy-mygreeterv3-async",
+      "name": "HelmDeploy-mygreeterv4-async",
       "targetType": "ApplicationDefinition",
       "applications": {
         "names": [
-          "mygreeterv3async"
+          "mygreeterv4async"
         ],
         "actions": [
           "AppDeploy"
         ],
         "applyAcrossServiceResources": {
-          "definitionName": "mygreeterv3async-SRDef"
+          "definitionName": "mygreeterv4async-SRDef"
         }
       },
       "dependsOn": [
@@ -96,17 +96,17 @@
       ]
     },
     {
-      "name": "HelmDeploy-mygreeterv3-demoserver",
+      "name": "HelmDeploy-mygreeterv4-demoserver",
       "targetType": "ApplicationDefinition",
       "applications": {
         "names": [
-          "mygreeterv3demoserver"
+          "mygreeterv4demoserver"
         ],
         "actions": [
           "AppDeploy"
         ],
         "applyAcrossServiceResources": {
-          "definitionName": "mygreeterv3demoserver-SRDef"
+          "definitionName": "mygreeterv4demoserver-SRDef"
         }
       },
       "dependsOn": [

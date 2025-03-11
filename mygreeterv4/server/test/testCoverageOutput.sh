@@ -3,7 +3,7 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 NC='\033[0m'
-mkdir -p mygreeterv3/server/test/coverage_reports
+mkdir -p mygreeterv4/server/test/coverage_reports
 
 echo "export GOPRIVATE='dev.azure.com'" >> ~/.bashrc
 git config --global url."https://$READPAT@dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service".insteadOf "https://dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service"
@@ -12,8 +12,8 @@ git config --global url."https://$READPAT@dev.azure.com/service-hub-flg/service_
 go install github.com/onsi/ginkgo/v2/ginkgo@latest
 #Add go path to bash
 PATH=$PATH:$(go env GOPATH)/bin
-cd mygreeterv3
-fileName=mygreeterv3-coverage-report
+cd mygreeterv4
+fileName=mygreeterv4-coverage-report
 #Perform test coverage for given folder and save output result
 ginkgo -r -v --trace --coverprofile=.coverage-report.out --skip-package=mock ./...
 go tool cover -html=.coverage-report.out -o server/test/coverage_reports/$fileName.html

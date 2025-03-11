@@ -3,8 +3,8 @@
   "contentVersion": "1.0.0.0",
   "applications": [
     {
-      "ServiceResourceDefinitionName": "mygreeterv3server-SRDef",
-      "ApplicationDefinitionName": "mygreeterv3server",
+      "ServiceResourceDefinitionName": "mygreeterv4server-SRDef",
+      "ApplicationDefinitionName": "mygreeterv4server",
       "authentication": {
         "armResourceName": "servicehubval-{{.resourcesName}}-cluster",
         "type": "CertificateAuthentication",
@@ -14,8 +14,8 @@
       }
     },
     {
-      "ServiceResourceDefinitionName": "mygreeterv3demoserver-SRDef",
-      "ApplicationDefinitionName": "mygreeterv3demoserver",
+      "ServiceResourceDefinitionName": "mygreeterv4demoserver-SRDef",
+      "ApplicationDefinitionName": "mygreeterv4demoserver",
       "authentication": {
         "armResourceName": "servicehubval-{{.resourcesName}}-cluster",
         "type": "CertificateAuthentication",
@@ -25,8 +25,8 @@
       }
     },
     {
-      "ServiceResourceDefinitionName": "mygreeterv3async-SRDef",
-      "ApplicationDefinitionName": "mygreeterv3async",
+      "ServiceResourceDefinitionName": "mygreeterv4async-SRDef",
+      "ApplicationDefinitionName": "mygreeterv4async",
       "authentication": {
         "armResourceName": "servicehubval-{{.resourcesName}}-cluster",
         "type": "CertificateAuthentication",
@@ -36,8 +36,8 @@
       }
     },
     {
-      "ServiceResourceDefinitionName": "mygreeterv3client-SRDef",
-      "ApplicationDefinitionName": "mygreeterv3client",
+      "ServiceResourceDefinitionName": "mygreeterv4client-SRDef",
+      "ApplicationDefinitionName": "mygreeterv4client",
       "authentication": {
         "armResourceName": "servicehubval-{{.resourcesName}}-cluster",
         "type": "CertificateAuthentication",

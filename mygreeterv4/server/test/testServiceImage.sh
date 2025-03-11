@@ -7,7 +7,7 @@ NC='\033[0m'
 set -e
 
 
-cd mygreeterv3
+cd mygreeterv4
 cd server
 
 export READPAT=$READPAT

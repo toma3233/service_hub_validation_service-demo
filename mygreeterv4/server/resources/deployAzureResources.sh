@@ -17,7 +17,7 @@ deploy_template() {
     # i.e. alert-rules/CreateResourceGroup.ServiceResources.Template.bicep -> CreateResourceGroup
     BASE_FILENAME="$(basename "${TEMPL_FILE}" | cut -d. -f1)"
     RESOURCES_NAME=$(jq -r '.parameters.resourcesName.value' ServiceResources.Parameters.json); \
-    az deployment sub create --name "${BASE_FILENAME}-${RESOURCES_NAME}-mygreeterv3-deploy" --location eastus --template-file "$TEMPL_FILE" --parameters ServiceResources.Parameters.json -o json > $TEMPL_DIR/.${BASE_FILENAME}_tmp.json
+    az deployment sub create --name "${BASE_FILENAME}-${RESOURCES_NAME}-mygreeterv4-deploy" --location eastus --template-file "$TEMPL_FILE" --parameters ServiceResources.Parameters.json -o json > $TEMPL_DIR/.${BASE_FILENAME}_tmp.json
     if $SAVE_OUTPUTS; then \
     if cat $TEMPL_DIR/.${BASE_FILENAME}_tmp.json | grep '"provisioningState": "Succeeded"' > /dev/null 2>&1; then \
 		echo "${BASE_FILENAME} resource provisioning succeeded."; \

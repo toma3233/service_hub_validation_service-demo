@@ -6,5 +6,5 @@ This directory contains a generated Makefile template for managing Docker images
 
 ## File Details
     
-### /mygreeterv3/server/generated/template-Makefile
+### /mygreeterv4/server/generated/template-Makefile
 This is a generated Makefile template used for deploying shared resources and managing Docker images for a project. It includes commands for connecting to a Kubernetes cluster, building Docker images, and pushing them to an Azure Container Registry.

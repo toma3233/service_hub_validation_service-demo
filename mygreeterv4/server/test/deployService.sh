@@ -9,7 +9,7 @@ NC='\033[0m'
 
 # TODO: Some sort of check that resources are provisioned
 #---------
-cd mygreeterv3
+cd mygreeterv4
 cd server
 make install
 if [ $? -ne 0 ]

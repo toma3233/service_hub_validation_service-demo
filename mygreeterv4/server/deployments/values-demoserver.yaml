@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 nameOverride: ""
-fullnameOverride: servicehubval-mygreeterv3-demoserver
+fullnameOverride: servicehubval-mygreeterv4-demoserver
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -28,7 +28,7 @@ args:
 
 # Info used for authorization policy
 allowedPrincipals:
-  - cluster.local/ns/servicehubval-mygreeterv3-server/sa/servicehubval-mygreeterv3-server
+  - cluster.local/ns/servicehubval-mygreeterv4-server/sa/servicehubval-mygreeterv4-server
 
 allowedRequests:
   - /MyGreeter/SayHello

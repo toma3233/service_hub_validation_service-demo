@@ -3,14 +3,14 @@
   "contentVersion": "1.0.0",
   "serviceMetadata": {
     "serviceIdentifier": "dfe3a810-861c-44da-9b00-71e57a865194",
-    "serviceGroup": "Microsoft.Azure.Ev2.ServiceResources.mygreeterv3",
+    "serviceGroup": "Microsoft.Azure.Ev2.ServiceResources.mygreeterv4",
     "environment": "$config(environment)",
     "TenantId": "$config(tenantId)",
-    "displayName": "mygreeterv3DisplayName"
+    "displayName": "mygreeterv4DisplayName"
   },
   "serviceResourceGroupDefinitions": [
     {
-      "name": "mygreeterv3-SRGDef",
+      "name": "mygreeterv4-SRGDef",
       "subscriptionKey": "servicehubval-$config(regionShortName)-sub",
       "azureResourceGroupName": "servicehubval-ev2-$config(regionShortName)-rg",
       "ServiceResourceDefinitions": [
@@ -30,11 +30,11 @@
           ]
         },
         {
-          "name": "mygreeterv3client-SRDef",
+          "name": "mygreeterv4client-SRDef",
           "composedOf": {
             "application": {
               "names": [
-                "mygreeterv3client"
+                "mygreeterv4client"
               ]
             },
             "extension": {
@@ -51,11 +51,11 @@
           ]
         },
         {
-          "name": "mygreeterv3server-SRDef",
+          "name": "mygreeterv4server-SRDef",
           "composedOf": {
             "application": {
               "names": [
-                "mygreeterv3server"
+                "mygreeterv4server"
               ]
             },
             "extension": {
@@ -72,11 +72,11 @@
           ]
         },
         {
-          "name": "mygreeterv3async-SRDef",
+          "name": "mygreeterv4async-SRDef",
           "composedOf": {
             "application": {
               "names": [
-                "mygreeterv3async"
+                "mygreeterv4async"
               ]
             },
             "extension": {
@@ -93,11 +93,11 @@
           ]
         },
         {
-          "name": "mygreeterv3demoserver-SRDef",
+          "name": "mygreeterv4demoserver-SRDef",
           "composedOf": {
             "application": {
               "names": [
-                "mygreeterv3demoserver"
+                "mygreeterv4demoserver"
               ]
             },
             "extension": {
@@ -140,13 +140,13 @@
   ],
   "ApplicationDefinitions": [
     {
-      "name": "mygreeterv3client",
+      "name": "mygreeterv4client",
       "rollbackOnFailure": false,
       "azureKubernetesService": {
-        "releaseName": "mygreeterv3-client",
+        "releaseName": "mygreeterv4-client",
         "chart": {
           "reference": {
-            "path": "Build\\mygreeterv3-0.1.0.tgz"
+            "path": "Build\\mygreeterv4-0.1.0.tgz"
           }
         },
         "tools": {
@@ -164,13 +164,13 @@
       }
     },
     {
-      "name": "mygreeterv3server",
+      "name": "mygreeterv4server",
       "rollbackOnFailure": false,
       "azureKubernetesService": {
-        "releaseName": "mygreeterv3-server",
+        "releaseName": "mygreeterv4-server",
         "chart": {
           "reference": {
-            "path": "Build\\mygreeterv3-0.1.0.tgz"
+            "path": "Build\\mygreeterv4-0.1.0.tgz"
           }
         },
         "tools": {
@@ -188,13 +188,13 @@
       }
     },
     {
-      "name": "mygreeterv3async",
+      "name": "mygreeterv4async",
       "rollbackOnFailure": false,
       "azureKubernetesService": {
-        "releaseName": "mygreeterv3-async",
+        "releaseName": "mygreeterv4-async",
         "chart": {
           "reference": {
-            "path": "Build\\mygreeterv3-0.1.0.tgz"
+            "path": "Build\\mygreeterv4-0.1.0.tgz"
           }
         },
         "tools": {
@@ -212,13 +212,13 @@
       }
     },
     {
-      "name": "mygreeterv3demoserver",
+      "name": "mygreeterv4demoserver",
       "rollbackOnFailure": false,
       "azureKubernetesService": {
-        "releaseName": "mygreeterv3-demoserver",
+        "releaseName": "mygreeterv4-demoserver",
         "chart": {
           "reference": {
-            "path": "Build\\mygreeterv3-0.1.0.tgz"
+            "path": "Build\\mygreeterv4-0.1.0.tgz"
           }
         },
         "tools": {

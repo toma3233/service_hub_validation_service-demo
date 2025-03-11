@@ -4,8 +4,8 @@ buf.build/gen/go/service-hub/loggable/protocolbuffers/go v1.32.0-20231012175355-
 buf.build/gen/go/service-hub/loggable/protocolbuffers/go v1.32.0-20231012175355-a349f6324a7e.1/go.mod h1:/iCxaXrItOBYH3A97v3qhTiCUWGQZSj4e1KaROGPEgk=
 dario.cat/mergo v1.0.0 h1:AGCNq9Evsj31mOgNPcLyXc+4PNABt905YmuqPYYpBWk=
 dario.cat/mergo v1.0.0/go.mod h1:uNxQE+84aUszobStD9th8a29P2fMDhsBdgRYvZOxGmk=
-dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/api v0.0.50 h1:dNlhAa3FyT7TYKYla30gSuLmIzjz/3aih8/QZSLwpnE=
-dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/api v0.0.50/go.mod h1:8eZGqN4ddweIkvYeRGyNxIAqS+oBq5MmBdk4N+wT5h4=
+dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/api v0.0.50 h1:dNlhAa3FyT7TYKYla30gSuLmIzjz/3aih8/QZSLwpnE=
+dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/api v0.0.50/go.mod h1:8eZGqN4ddweIkvYeRGyNxIAqS+oBq5MmBdk4N+wT5h4=
 github.com/AdaLogics/go-fuzz-headers v0.0.0-20230811130428-ced1acdcaa24 h1:bvDV9vkmnHYOMsOr4WLk+Vo07yKIzd94sVoIqshQ4bU=
 github.com/AdaLogics/go-fuzz-headers v0.0.0-20230811130428-ced1acdcaa24/go.mod h1:8o94RPi1/7XTJvwPpRSzSUedZrtlirdB3r9Z20bi2f8=
 github.com/Azure/OperationContainer/api v0.0.0-20250127195958-c28f977b4ce7 h1:sIbvY91NvWXbjsEFxIIzWrVPP+vFEnb/zRo2J/QteuU=

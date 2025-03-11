@@ -9,7 +9,7 @@ NC='\033[0m'
 
 # TODO: Some sort of check that resources are provisioned
 #---------
-cd mygreeterv3
+cd mygreeterv4
 cd server
 # If we re-add make service into deploy-resources, these arguments will 
 # be needed for pipeline to successfully access the private repository.

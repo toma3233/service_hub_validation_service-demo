@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 nameOverride: ""
-fullnameOverride: servicehubval-mygreeterv3-client
+fullnameOverride: servicehubval-mygreeterv4-client
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -21,8 +21,8 @@ args:
   - hello
   - --interval-milli-sec=60000
   - --json-log
-  - --remote-addr=servicehubval-mygreeterv3-server.servicehubval-mygreeterv3-server:50051
-  - --http-addr=http://servicehubval-mygreeterv3-server.servicehubval-mygreeterv3-server.svc.cluster.local:50061
+  - --remote-addr=servicehubval-mygreeterv4-server.servicehubval-mygreeterv4-server:50051
+  - --http-addr=http://servicehubval-mygreeterv4-server.servicehubval-mygreeterv4-server.svc.cluster.local:50061
 
 # Info used for authorization policy
 allowedPrincipals: []

@@ -1,9 +1,9 @@
-module dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server
+module dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server
 
 go 1.23.2
 
 require (
-	dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/api v0.0.50
+	dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/api v0.0.50
 	github.com/Azure/OperationContainer/api v0.0.0-20250127195958-c28f977b4ce7
 	github.com/Azure/aks-async v0.0.39
 	github.com/Azure/aks-middleware v0.0.31

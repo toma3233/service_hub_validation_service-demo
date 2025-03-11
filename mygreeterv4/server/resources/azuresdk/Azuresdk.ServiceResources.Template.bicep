@@ -29,26 +29,26 @@ resource aks 'Microsoft.ContainerService/managedClusters@2024-09-02-preview' exi
   scope: resourceGroup(subscriptionId, resourceGroupName)
 }
 
-var serverServiceAccountNamespace = 'servicehubval-mygreeterv3-server'
-var serverServiceAccountName = 'servicehubval-mygreeterv3-server'
-var asyncServiceAccountNamespace = 'servicehubval-mygreeterv3-async'
-var asyncServiceAccountName = 'servicehubval-mygreeterv3-async'
+var serverServiceAccountNamespace = 'servicehubval-mygreeterv4-server'
+var serverServiceAccountName = 'servicehubval-mygreeterv4-server'
+var asyncServiceAccountNamespace = 'servicehubval-mygreeterv4-async'
+var asyncServiceAccountName = 'servicehubval-mygreeterv4-async'
 module managedIdentity 'br/public:avm/res/managed-identity/user-assigned-identity:0.2.1' = {
-  name: 'servicehubval-${resourcesName}-mygreeterv3-managed-identityDeploy'
+  name: 'servicehubval-${resourcesName}-mygreeterv4-managed-identityDeploy'
   scope: resourceGroup(subscriptionId, resourceGroupName)
   params: {
     // Name needs to be unique in the entire subscription, thus why we add the `${resourcesName}` to avoid conflicts from different developers.
-    name: 'servicehubval-${resourcesName}-mygreeterv3-managedIdentity'
+    name: 'servicehubval-${resourcesName}-mygreeterv4-managedIdentity'
     location: rg.location
     federatedIdentityCredentials: [
       {
-        name: 'servicehubval-${resourcesName}-mygreeterv3-fedIdentity-server'
+        name: 'servicehubval-${resourcesName}-mygreeterv4-fedIdentity-server'
         issuer: aks.properties.oidcIssuerProfile.issuerURL
         subject: 'system:serviceaccount:${serverServiceAccountNamespace}:${serverServiceAccountName}'
         audiences: ['api://AzureADTokenExchange']
       }
       {
-        name: 'servicehubval-${resourcesName}-mygreeterv3-fedIdentity-async'
+        name: 'servicehubval-${resourcesName}-mygreeterv4-fedIdentity-async'
         issuer: aks.properties.oidcIssuerProfile.issuerURL
         subject: 'system:serviceaccount:${asyncServiceAccountNamespace}:${asyncServiceAccountName}'
         audiences: ['api://AzureADTokenExchange']
@@ -59,11 +59,11 @@ module managedIdentity 'br/public:avm/res/managed-identity/user-assigned-identit
 
 // TODO: Migrate to use bicep module registry. Current bicep registry module is management group scoped but we use subscription scoped.
 module azureSdkRoleAssignment 'br:servicehubregistry.azurecr.io/bicep/modules/subscription-role-assignment:v6' = {
-  name: 'servicehubval-mygreeterv3azuresdkra${location}Deploy'
+  name: 'servicehubval-mygreeterv4azuresdkra${location}Deploy'
   scope: subscription(subscriptionId)
   params: {
     principalId: managedIdentity.outputs.principalId
-    description: 'servicehubval-mygreeterv3-${resourcesName}-contributor-azuresdk-role-assignment'
+    description: 'servicehubval-mygreeterv4-${resourcesName}-contributor-azuresdk-role-assignment'
     roleDefinitionIdOrName: 'Contributor'
     principalType: 'ServicePrincipal'
     subscriptionId: subscriptionId
@@ -103,11 +103,11 @@ module resourceRoleAssignmentServiceBusReceiver 'br/public:avm/ptn/authorization
 //TODO(mheberling): SQL server can only add other users to the db (after the admin is set) via SQL users.
 // Look into using SQL Managed instance or setting the admin managed identity to the pods.
 module server 'br/public:avm/res/sql/server:0.9.1' = {
-  name: 'mygreeterv3-${resourcesName}-serverDeploy'
+  name: 'mygreeterv4-${resourcesName}-serverDeploy'
   scope: resourceGroup(subscriptionId, resourceGroupName)
   params: {
     // Required parameters
-    name: 'mygreeterv3-${resourcesName}-${location}-sql-server'
+    name: 'mygreeterv4-${resourcesName}-${location}-sql-server'
     location: rg.location
     // Non-required parameters
     administrators: {
@@ -118,7 +118,7 @@ module server 'br/public:avm/res/sql/server:0.9.1' = {
     }
     databases: [
       {
-        name: 'mygreeterv3-${resourcesName}-sql-database'
+        name: 'mygreeterv4-${resourcesName}-sql-database'
         zoneRedundant: false
       }
     ]
