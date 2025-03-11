@@ -1,4 +1,3 @@
-// Auto generated. Don't modify.
 package server
 
 import (
@@ -10,8 +9,8 @@ import (
 	"strconv"
 	"time"
 
-	pb "dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/api/v1"
-	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/internal/logattrs"
+	pb "dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/api/v1"
+	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/internal/logattrs"
 
 	"github.com/Azure/aks-middleware/grpc/interceptor"
 	"github.com/Azure/aks-middleware/http/client/azuresdk/policy"

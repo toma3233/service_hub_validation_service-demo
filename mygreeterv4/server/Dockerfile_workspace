@@ -1,7 +1,7 @@
 # Build stage I: 
 FROM mcr.microsoft.com/oss/go/microsoft/golang:1.23.2-1-bullseye AS build
 
-WORKDIR /mygreeterv3
+WORKDIR /mygreeterv4
 COPY . .
 
 
@@ -15,17 +15,17 @@ RUN cd server && go mod tidy && go get google.golang.org/genproto@latest
 
 # The output will be in the current directory.
 # The path is the complete package path. No main name in the path.
-RUN cd server && go build dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/client
-RUN cd server && go build dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/demoserver
-RUN cd server && go build dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/server
+RUN cd server && go build dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/client
+RUN cd server && go build dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/demoserver
+RUN cd server && go build dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/server
 
 
 # Build stage II: 
 # FROM scratch
 # FROM busybox
 FROM mcr.microsoft.com/openjdk/jdk:17-ubuntu
-COPY --from=build /mygreeterv3/server/client /
-COPY --from=build mygreeterv3//server/demoserver /
-COPY --from=build /mygreeterv3/server/server /
+COPY --from=build /mygreeterv4/server/client /
+COPY --from=build mygreeterv4//server/demoserver /
+COPY --from=build /mygreeterv4/server/server /
 
 CMD ["/server"]

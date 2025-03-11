@@ -1,4 +1,3 @@
-// Auto generated. Don't modify.
 package async
 
 import (
@@ -9,9 +8,9 @@ import (
 	log "log/slog"
 	"regexp"
 
-	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/internal/async/operations"
-	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/internal/async/operations/longRunningOperation"
-	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/internal/logattrs"
+	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/internal/async/operations"
+	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/internal/async/operations/longRunningOperation"
+	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/internal/logattrs"
 	"github.com/Azure/aks-middleware/grpc/interceptor"
 	"github.com/Azure/aks-middleware/grpc/server/ctxlogger"
 	"github.com/Azure/azure-sdk-for-go/sdk/azcore"

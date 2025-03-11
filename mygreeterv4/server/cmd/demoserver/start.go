@@ -1,8 +1,7 @@
-// Auto generated. Can be modified.
 package main
 
 import (
-	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/internal/demoserver"
+	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/internal/demoserver"
 
 	"github.com/spf13/cobra"
 )

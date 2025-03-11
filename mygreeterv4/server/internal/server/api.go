@@ -11,8 +11,8 @@ import (
 
 	"database/sql"
 
-	pb "dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/api/v1"
-	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/internal/logattrs"
+	pb "dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/api/v1"
+	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/internal/logattrs"
 	oc "github.com/Azure/OperationContainer/api/v1"
 	ocClient "github.com/Azure/OperationContainer/api/v1/client"
 	database "github.com/Azure/aks-async/database"
@@ -24,7 +24,7 @@ import (
 	"github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/storage/armstorage"
 	"google.golang.org/grpc"
 
-	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/api/v1/client"
+	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/api/v1/client"
 	serviceHubPolicy "github.com/Azure/aks-middleware/http/client/azuresdk/policy"
 )
 

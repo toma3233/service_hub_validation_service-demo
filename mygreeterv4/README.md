@@ -1,4 +1,4 @@
-# mygreeterv3
+# mygreeterv4
 
 ## Prerequisites
 
@@ -89,27 +89,27 @@ If you don't use go.work ((make build-image)), you need to commit your generated
 
 Deploying the changed service to Azure such as an AKS cluster for a complete modify-test cycle is slow. You can run the service on our local machine to speed up the development cycle.
 
-**Inside the mygreeterv3/server directory, you can run the client, the server, and the demoserver.**
+**Inside the mygreeterv4/server directory, you can run the client, the server, and the demoserver.**
 
 ### Server
 
 The following command runs the server with minimal functionality. The server starts to serve on the default address `localhost:50051` and the enable-azureSDK-calls flag is set to false. In this case, only the sayHello method works. It is served directly by the server. It won't call Azure either.
 
 ```bash
-go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/server start 
+go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/server start 
 ```
 
 The following command runs the server with the azureSDK calls enabled. Because the code runs on your local machine, your identity is used to call Azure. You need to have enough permissions on the subscription to allow the server to call Azure successfully. Otherwise the server will report permission errors.
 
 ```bash
-go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/server start \
+go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/server start \
     --enable-azureSDK-calls true --subscription-id <sub_id>
 ```
 
 The following command runs the server that will call the demoserver's sayHello method. This is to demonstrate gRPC calls from one service to another. --remote-addr <remote_addr> is demoserver's serving address.
 
 ```bash
-go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/server start \
+go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/server start \
     --remote-addr localhost:50052
 ```
 
@@ -120,7 +120,7 @@ When the server needs to call demoserver, you need to start the demoserver in a 
 The following command runs the demoserver on a specific port 50052.
 
 ```bash
-go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/demoserver start \
+go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/demoserver start \
     --port 50052
 ```
 
@@ -129,13 +129,13 @@ go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_val
 The following command runs the client which will repeatedly calls the service on `localhost:50051`. Using the example above, it will calls the server.
 
 ```bash
-go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/client hello
+go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/client hello
 ```
 
 The following command runs the client which will repeatedly calls the service on `localhost:50052`. Using the example above, it will calls the demoserver.
 
 ```bash
-go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/client hello --remote-addr localhost:50052
+go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/client hello --remote-addr localhost:50052
 ```
 
 ### Big picture on a local machine
@@ -153,9 +153,9 @@ You can get help about every command.
 Examples:
 
 ```bash
-go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/client help
+go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/client help
 
-go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/demoserver start -h
+go run dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/demoserver start -h
 ```
 
 
@@ -176,7 +176,7 @@ To deploy the resources:
 
 ```bash
 # Assume the current directory is the generated directory.
-cd mygreeterv3/server
+cd mygreeterv4/server
 
 # Templates env-config.yaml values into all the required files.
 # We assume env-config.yaml exists in your generated directory.
@@ -278,12 +278,12 @@ source ~/.bashrc
   - Deploy the service resources.
 - make build-image
   - Build the docker image with a specific version of the api module.
-  - [Dockerfile](server/Dockerfile): Its build context (input directory) is mygreeterv3/server. Only the code in this directory is needed. The api module is retrieved with the version defined in go.mod.
+  - [Dockerfile](server/Dockerfile): Its build context (input directory) is mygreeterv4/server. Only the code in this directory is needed. The api module is retrieved with the version defined in go.mod.
 - make build-multiarch-image
   - Build the same docker image as above, however as a multi-architecure (linux/arm64 and linux/amd64) image.
 - make build-workspace-image
   - Build the docker image with the latest api code.
-  - [Dockerfile](server/Dockerfile_workspace): Its build context (input directory) is mygreeterv3. The go.work file, the api directory, and the server directory are all used. The version of the api module defined in go.mod is ignored. The latest code in the api directory is used.
+  - [Dockerfile](server/Dockerfile_workspace): Its build context (input directory) is mygreeterv4. The go.work file, the api directory, and the server directory are all used. The version of the api module defined in go.mod is ignored. The latest code in the api directory is used.
 - make push-image
   - Push the image to the ACR which is a shared resource.
 - make upgrade or make install
@@ -298,11 +298,11 @@ You may need wait a few minutes before pods are created and logs show up.
 If you do not have kubectl installed you can run these commands to set up the docker container with an environment that will allow you to run the kubectl commands.
 
 ```bash
-# Assuming you are at the root of the generated directory (the one that contains mygreeterv3)
+# Assuming you are at the root of the generated directory (the one that contains mygreeterv4)
 export src=$(pwd)
 docker run -it --mount src=$src,target=/app/binded-data,type=bind servicehubregistry.azurecr.io/service_hub_environment:$20250228 /bin/bash
 # Once you are in the container
-export KUBECONFIG=app/binded-data/mygreeterv3/server/.kube/config
+export KUBECONFIG=app/binded-data/mygreeterv4/server/.kube/config
 ```
 
 Once inside the container or on your local machine that has kubectl installed
@@ -311,33 +311,33 @@ Server:
 
 ```bash
 # check if pod is running
-kubectl get pods -n servicehubval-mygreeterv3-server
+kubectl get pods -n servicehubval-mygreeterv4-server
 
 # check logs
-export SERVER_POD=$(kubectl get pod -n servicehubval-mygreeterv3-server -o jsonpath="{.items[0].metadata.name}")
-kubectl logs $SERVER_POD -n servicehubval-mygreeterv3-server
+export SERVER_POD=$(kubectl get pod -n servicehubval-mygreeterv4-server -o jsonpath="{.items[0].metadata.name}")
+kubectl logs $SERVER_POD -n servicehubval-mygreeterv4-server
 ```
 
 Demoserver:
 
 ```bash
 # check if pod is running
-kubectl get pods -n servicehubval-mygreeterv3-demoserver
+kubectl get pods -n servicehubval-mygreeterv4-demoserver
 
 # check logs
-export DEMOSERVER_POD=$(kubectl get pod -n servicehubval-mygreeterv3-demoserver -o jsonpath="{.items[0].metadata.name}")
-kubectl logs $DEMOSERVER_POD -n servicehubval-mygreeterv3-demoserver
+export DEMOSERVER_POD=$(kubectl get pod -n servicehubval-mygreeterv4-demoserver -o jsonpath="{.items[0].metadata.name}")
+kubectl logs $DEMOSERVER_POD -n servicehubval-mygreeterv4-demoserver
 ```
 
 Client
 
 ```bash
 # check if pod is running
-kubectl get pods -n servicehubval-mygreeterv3-client
+kubectl get pods -n servicehubval-mygreeterv4-client
 
 # check logs
-export CLIENT_POD=$(kubectl get pod -n servicehubval-mygreeterv3-client -o jsonpath="{.items[0].metadata.name}")
-kubectl logs $CLIENT_POD -n servicehubval-mygreeterv3-client
+export CLIENT_POD=$(kubectl get pod -n servicehubval-mygreeterv4-client -o jsonpath="{.items[0].metadata.name}")
+kubectl logs $CLIENT_POD -n servicehubval-mygreeterv4-client
 ```
 
 

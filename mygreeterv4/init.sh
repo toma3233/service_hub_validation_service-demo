@@ -14,7 +14,7 @@ SERVICEHUB_AKSMIDDLEWARE_VERSION="0.0.31"
 
 # For the api.
 cd api
-go mod init dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/api
+go mod init dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/api
 go mod edit -require github.com/Azure/aks-middleware@v$SERVICEHUB_AKSMIDDLEWARE_VERSION
 go get google.golang.org/genproto@latest
 cd ..
@@ -53,9 +53,9 @@ Use the following commands:
 
 git add ./api
 git commit -m "api module v0.0.1"
-git tag mygreeterv3/api/v0.0.1
+git tag mygreeterv4/api/v0.0.1
 git push
-git push origin mygreeterv3/api/v0.0.1
+git push origin mygreeterv4/api/v0.0.1
 
 Then you come back here to run this script again.
 After git push, the "module cannot be found" message may still persist.
@@ -67,8 +67,8 @@ echo -----------------------
 
 # For the server
 cd server
-go mod init dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server
-go mod edit -require dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/api@v$SERVICEHUB_APIV1_VERSION
+go mod init dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server
+go mod edit -require dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/api@v$SERVICEHUB_APIV1_VERSION
 go mod edit -require github.com/Azure/aks-middleware@v$SERVICEHUB_AKSMIDDLEWARE_VERSION
 go mod edit -require github.com/Azure/aks-async@v0.0.39
 go mod edit -require github.com/Azure/OperationContainer@v0.0.11
