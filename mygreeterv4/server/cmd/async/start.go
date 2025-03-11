@@ -1,4 +1,3 @@
-// Auto generated. Can be modified.
 package main
 
 import (
@@ -8,8 +7,8 @@ import (
 
 	log "log/slog"
 
-	async "dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/internal/async"
-	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/internal/logattrs"
+	async "dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/internal/async"
+	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/internal/logattrs"
 	"github.com/Azure/aks-middleware/grpc/server/ctxlogger"
 
 	"github.com/spf13/cobra"

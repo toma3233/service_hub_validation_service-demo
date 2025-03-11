@@ -1,4 +1,3 @@
-// Auto generated. Can be modified.
 package main
 
 import (
@@ -6,7 +5,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/internal/server"
+	"dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/internal/server"
 	"github.com/spf13/cobra"
 )
 

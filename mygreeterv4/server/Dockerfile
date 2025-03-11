@@ -14,10 +14,10 @@ RUN go mod tidy
 
 # The output will be in the current directory.
 # The path is the complete package path. No main name in the path.
-RUN go build dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/client
-RUN go build dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/demoserver
-RUN go build dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/server
-RUN go build dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv3/server/cmd/async
+RUN go build dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/client
+RUN go build dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/demoserver
+RUN go build dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/server
+RUN go build dev.azure.com/service-hub-flg/service_hub_validation/_git/service_hub_validation_service.git/mygreeterv4/server/cmd/async
 
 
 # Build stage II: 
